@@ -1,24 +1,28 @@
-# Docker Compose environment for Django
+# Docker Compose environment for Django - Elasticsearch - Postgre Sql
 
-## &nbsp;&nbsp;&nbsp;&nbsp;~ Please put your project to $(pwd)/docker/django/app/
+## Setup
+Put your project to $!PWD/docker/django/app/
+```
+$ git clone https://github.com/mertongngl/dockerComposeForDjango.git
+$ cd dockerComposeForDjango/
+$ cp 'your source code for django' docker/django/app
+```
 
-## &nbsp;&nbsp;&nbsp;&nbsp;~ If you want to add some python library, you can edit $(pwd)/docker/django/requirements.txt
+## Adding an externel library
 
-## &nbsp;&nbsp;&nbsp;&nbsp;~ If you want to use elasticsearch, you can use elasticsearch container in django container with 'es' alias.
+If you want to add some python library, you can edit $(pwd)/docker/django/requirements.txt
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \# For example; 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \-> curl http://es:9200/_cluster/health?pretty=true
+## Using Elasticsearch 
+If you want to use elasticsearch, you can use elasticsearch container in django container with 'es' alias.
 
-## &nbsp;&nbsp;&nbsp;&nbsp;~ Actually, you can use postgresql container in django container with 'postgres_db' alias.
+### For example; 
+`curl http://es:9200/_cluster/health?pretty=true`
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \# For example; 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \-> ping postgres_db
+You can use postgresql container in django container with 'postgres_db' alias. You can try to ping postgres_db now.
 
-## ~ How do I work with docker-compose
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \# For running compose  
+## How do I work with docker-compose
+### For running compose  
+`$ docker-compose up -d` 
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~ docker-compose up -d 
-
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \# For stopping compose  
-
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~ docker-compose down
+### For stopping compose  
+`docker-compose down`
