@@ -1,7 +1,7 @@
 # Docker Compose environment for Django - Elasticsearch - Postgre Sql
 
 ## Setup
-Put your project to $!PWD/docker/django/app/
+Put your project to $(pwd)/docker/django/app/
 ```
 $ git clone https://github.com/mertongngl/dockerComposeForDjango.git
 $ cd dockerComposeForDjango/
