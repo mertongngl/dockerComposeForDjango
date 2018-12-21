@@ -25,4 +25,4 @@ You can use postgresql container in django container with 'postgres_db' alias. Y
 `$ docker-compose up -d` 
 
 ### For stopping compose  
-`docker-compose down`
+`$ docker-compose down`
