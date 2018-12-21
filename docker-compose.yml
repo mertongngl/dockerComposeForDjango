@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  django:
+    container_name: django_app
+    image: django:latest
+    volumes:
+      - "./docker/django/:/usr/src/"
+    working_dir: /usr/src/app/
+    ports:
+      - "8000:8000"
+    links:
+      - postgres
+      - elastic
+    command: python manage.py runserver 0.0.0.0:8000
+  postgres:
+    container_name: postgres_db
+    image: postgres:latest
+    volumes:
+      - ./db_data:/var/lib/postgresql
+    ports: 
+      - 5432:5432
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pguser
+      POSTGRES_DB: pgdb
+  elastic:
+    container_name: es
+    image: elasticsearch:6.5.3
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      ES_JAVA_OPTS: "-Xms750m -Xmx750m"
+      discovery.type: single-node
+
+
+
